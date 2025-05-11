@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://dl7m65wqj2jcc"]
+
+[ext_resource type="PackedScene" uid="uid://brs1gl5chu8l4" path="res://Assets/_food_kit/GLB format/bowl-soup.glb" id="1_x6ves"]
+[ext_resource type="PackedScene" uid="uid://dyp3cpj2ds7ac" path="res://Assets/_food_kit/GLB format/plate.glb" id="2_b8yj3"]
+[ext_resource type="PackedScene" uid="uid://c6s67lpkmdiw0" path="res://Assets/_food_kit/GLB format/bowl.glb" id="2_fruve"]
+[ext_resource type="Script" uid="uid://ci5qipqvigp7e" path="res://Scripts/Resource Classes/IngredientRes.gd" id="3_x6ves"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_x6ves")
+group = "Ingredients"
+name = "Soup"
+raw_visual = ExtResource("2_fruve")
+processed_visual = ExtResource("1_x6ves")
+prop = ExtResource("2_b8yj3")
+processed = false
+requires_player_snap = true
+processing_time = 5.0
+metadata/_custom_type_script = "uid://ci5qipqvigp7e"

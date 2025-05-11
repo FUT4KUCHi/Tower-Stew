@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv7kfildw5vgo"]
+
+[ext_resource type="Script" uid="uid://bsruul18ok2i" path="res://Scripts/player_movement_v2.gd" id="1_v0iea"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ynf5e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hptm8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21xkr"]
+size = Vector3(2, 1, 1)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_v0iea")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ynf5e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hptm8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 0, 5.96046e-08)
+shape = SubResource("BoxShape3D_21xkr")
+debug_color = Color(0.767979, 0.161823, 1, 0.42)
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Hand"]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

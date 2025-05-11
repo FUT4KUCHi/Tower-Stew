@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://deckth2uoy2fm"]
+
+[ext_resource type="Script" uid="uid://bwwfqa0agpa6y" path="res://Scripts/snapping_point.gd" id="1_fa5j8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpwm6"]
+
+[node name="SnappingPoint" type="Node3D"]
+script = ExtResource("1_fa5j8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("BoxShape3D_vpwm6")
+debug_color = Color(0.873825, 0.346236, 1.92523e-07, 0.42)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

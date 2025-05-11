@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://c8dprjkatmtdl"]
+
+[ext_resource type="PackedScene" uid="uid://bj10cicgq12eh" path="res://Assets/_food_kit/GLB format/meat-cooked.glb" id="1_ymrxk"]
+[ext_resource type="PackedScene" uid="uid://bgeunb4hbicl" path="res://Assets/_food_kit/GLB format/meat-raw.glb" id="2_73yrg"]
+[ext_resource type="PackedScene" uid="uid://dy4tg3fjci47j" path="res://Assets/_food_kit/GLB format/cutting-board-round.glb" id="2_nv02u"]
+[ext_resource type="Script" uid="uid://ci5qipqvigp7e" path="res://Scripts/Resource Classes/IngredientRes.gd" id="3_ymrxk"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_ymrxk")
+group = "Ingredients"
+name = "Meat"
+raw_visual = ExtResource("2_73yrg")
+processed_visual = ExtResource("1_ymrxk")
+prop = ExtResource("2_nv02u")
+processed = false
+requires_player_snap = false
+processing_time = 5.0
+metadata/_custom_type_script = "uid://ci5qipqvigp7e"
